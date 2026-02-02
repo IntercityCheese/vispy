@@ -84,6 +84,48 @@ class Node(QGraphicsItem):
 
         return super().itemChange(change, value)
 
+    def mousePressEvent(self, event):
+        # Ctrl+LeftClick deletes the node and any connected edges
+        if event.button() == Qt.LeftButton and (event.modifiers() & Qt.ControlModifier):
+            scene = self.scene()
+
+            # collect unique edges connected to any socket
+            edges_to_remove = set()
+            for sock in self.sockets:
+                for e in list(sock.edges):
+                    edges_to_remove.add(e)
+
+            for e in edges_to_remove:
+                # remove from start socket list
+                try:
+                    if hasattr(e.start, 'edges') and e in e.start.edges:
+                        e.start.edges.remove(e)
+                except Exception:
+                    pass
+
+                # remove from end socket list if it's a socket
+                try:
+                    if isinstance(e.end, QGraphicsItem) and hasattr(e.end, 'edges') and e in e.end.edges:
+                        e.end.edges.remove(e)
+                except Exception:
+                    pass
+
+                # remove the edge graphics item from the scene
+                try:
+                    scene.removeItem(e)
+                except Exception:
+                    pass
+
+            # finally remove the node itself
+            try:
+                scene.removeItem(self)
+            except Exception:
+                pass
+
+            event.accept()
+        else:
+            super().mousePressEvent(event)
+
 
 class Socket(QGraphicsItem):
     def __init__(self, parent, x, y, type, name=""):
@@ -242,6 +284,8 @@ class Socket(QGraphicsItem):
             for it in items:
                 if isinstance(it, Socket) and it is not self:
                     target = it
+                    if target.type.name != self.type.name and target.type.name != "Any" :
+                        target = None
                     break
 
             if target is not None:
