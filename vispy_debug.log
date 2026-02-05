@@ -1,0 +1,35 @@
+2026-02-02 19:20:43,559 DEBUG:root: Type change requested for variable 'asd' -> 'Boolean'
+2026-02-02 19:20:43,559 DEBUG:root: Attempting to move widget 'asd' to type 'Boolean'
+2026-02-02 19:20:43,559 DEBUG:root: Move successful
+Windows fatal exception: access violation
+
+Current thread 0x00004d30 (most recent call first):
+  File "c:\Users\Alfie\Downloads\vispy\vispy\vis.pyw", line 64 in <module>
+2026-02-02 19:22:10,969 DEBUG:root: Type change requested for variable 'player_name' -> 'Any'
+2026-02-02 19:22:10,970 DEBUG:root: Attempting to recreate widget 'player_name' to type 'Any'
+2026-02-02 19:22:10,970 DEBUG:root: Recreating widget in new group
+2026-02-02 19:22:10,971 DEBUG:root: Recreate move successful
+2026-02-02 19:22:13,715 DEBUG:root: Type change requested for variable 'player_name' -> 'Evaluation'
+2026-02-02 19:22:13,715 DEBUG:root: Attempting to recreate widget 'player_name' to type 'Evaluation'
+2026-02-02 19:22:13,715 DEBUG:root: Recreating widget in new group
+2026-02-02 19:22:13,716 DEBUG:root: Recreate move successful
+2026-02-02 19:22:29,462 DEBUG:root: Type change requested for variable 'new_var_5' -> 'Boolean'
+2026-02-02 19:22:29,462 DEBUG:root: Attempting to recreate widget 'new_var_5' to type 'Boolean'
+2026-02-02 19:22:29,462 DEBUG:root: Recreating widget in new group
+2026-02-02 19:22:29,463 DEBUG:root: Recreate move successful
+2026-02-02 19:22:31,754 DEBUG:root: Type change requested for variable 'new_var_4' -> 'Exec'
+2026-02-02 19:22:31,754 DEBUG:root: Attempting to recreate widget 'new_var_4' to type 'Exec'
+2026-02-02 19:22:31,754 DEBUG:root: Recreating widget in new group
+2026-02-02 19:22:31,755 DEBUG:root: Recreate move successful
+2026-02-02 19:22:35,267 DEBUG:root: Type change requested for variable 'new_var_4' -> 'Integer'
+2026-02-02 19:22:35,268 DEBUG:root: Attempting to recreate widget 'new_var_4' to type 'Integer'
+2026-02-02 19:22:35,268 DEBUG:root: Recreating widget in new group
+2026-02-02 19:22:35,269 DEBUG:root: Recreate move successful
+2026-02-02 19:22:37,583 DEBUG:root: Type change requested for variable 'new_var_3' -> 'Integer'
+2026-02-02 19:22:37,583 DEBUG:root: Attempting to recreate widget 'new_var_3' to type 'Integer'
+2026-02-02 19:22:37,583 DEBUG:root: Recreating widget in new group
+2026-02-02 19:22:37,586 DEBUG:root: Recreate move successful
+2026-02-05 18:04:37,114 INFO:root: New file action triggered
+2026-02-05 18:11:09,049 INFO:root: Save action triggered
+2026-02-05 18:11:34,741 INFO:root: Open file: C:/Users/Alfie/Documents/vispyfile1.vp
+2026-02-05 18:14:23,668 INFO:root: Open file: C:/Users/Alfie/Documents/vispyfile1.vp

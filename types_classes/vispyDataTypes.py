@@ -11,10 +11,10 @@ class TypeProfile:
 
 
 class types:
-    string  = TypeProfile("String",  "#00FF00", "Ellipse" ,"")
-    float   = TypeProfile("Float",   "#00FFEA", "Ellipse" ,0.0)
-    integer = TypeProfile("Integer", "#0055FF", "Ellipse" ,0)
-    boolean = TypeProfile("Boolean", "#FF00FF", "Ellipse" ,False)
+    string  = TypeProfile("String",  "#00FF00", "TextInput" ,"")
+    float   = TypeProfile("Float",   "#00FFEA", "RealInput" ,0.0)
+    integer = TypeProfile("Integer", "#0055FF", "IntInput" ,0)
+    boolean = TypeProfile("Boolean", "#FF00FF", "BoolInput" ,False)
     exec    = TypeProfile("Exec",    "#FFFFFF", "Rect" ,None)
     any     = TypeProfile("Any",     "#AAAAAA", "Ellipse" ,None)
     text    = TypeProfile("Text", "#005500", "TextInput", "")

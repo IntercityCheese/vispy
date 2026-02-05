@@ -1,3 +1,9 @@
+# REFER TO vispyDataTypes.py and node_data.py for all the information that makes up
+# a node file
+
+## ==> when a node that uses a non string value as input is created, always use a cast
+##      the input as the textInput socket exists.
+
 from types_classes.vispyDataTypes import types
 from types_classes.node_data import NodeData
 

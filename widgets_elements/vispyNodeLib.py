@@ -13,6 +13,19 @@ from PySide6.QtCore import QRectF, Qt, QPointF
 import types_classes.vispyDataTypes as vdt
 import types_classes.node_library as nl
 
+# Category to color mapping for node headers
+CATEGORY_COLORS = {
+    "Logic Flow": QColor(100, 150, 200),
+    "Math": QColor(200, 150, 100),
+    "I/O": QColor(150, 200, 100),
+    "Data Manipulation": QColor(200, 100, 150),
+    "Selection": QColor(180, 130, 200),
+    "Flow": QColor(130, 200, 180),
+    "Logic": QColor(200, 180, 100),
+    "Variables": QColor(150, 150, 200),
+    "Values": QColor(200, 200, 100),
+}
+
 class Node(QGraphicsItem):
     def __init__(self, node_data):
         super().__init__()
@@ -21,7 +34,6 @@ class Node(QGraphicsItem):
         self.title = node_data.node_type
 
         self.width = 160
-        self.height = 80
         self.sockets = []
 
         self.setFlags(
@@ -43,6 +55,10 @@ class Node(QGraphicsItem):
             sock = Socket(self, self.width, y_offset + i * spacing, t, name)
             self.sockets.append(sock)
 
+        # calculate height based on number of sockets
+        max_sockets = max(len(node_data.inputs), len(node_data.outputs))
+        self.height = max(80, 30 + max_sockets * spacing + 10)
+
     def boundingRect(self):
         return QRectF(0, 0, self.width, self.height)
 
@@ -58,6 +74,14 @@ class Node(QGraphicsItem):
 
         painter.drawRoundedRect(
             0, 0, self.width, self.height, 6, 6
+        )
+
+        # draw colored header based on category
+        header_color = CATEGORY_COLORS.get(self.data.category, QColor(80, 80, 80))
+        painter.setBrush(header_color)
+        painter.setPen(Qt.NoPen)
+        painter.drawRoundedRect(
+            0, 0, self.width, 25, 6, 6
         )
 
         painter.setPen(Qt.white)

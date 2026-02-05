@@ -1,0 +1,3 @@
+2026-02-02 18:55:17,071 DEBUG:root: Type change requested for variable 'score' -> 'Boolean'
+2026-02-02 18:55:17,071 DEBUG:root: Attempting to move widget 'score' to type 'Boolean'
+2026-02-02 18:55:17,072 DEBUG:root: Move successful
