@@ -7,6 +7,8 @@ from PySide6.QtCore import Qt, qInstallMessageHandler
 import sys, os, logging, traceback
 import faulthandler
 
+from about import about
+
 # setup logging to file for crash debugging
 _log_path = os.path.join(os.path.dirname(__file__), 'vispy_debug.log')
 logging.basicConfig(level=logging.DEBUG, filename=_log_path, filemode='a',
@@ -163,7 +165,7 @@ class NodeEditor(QMainWindow):
         QMessageBox.information(self, "Preferences", "Preferences dialog - implement settings here")
 
     def _show_about(self):
-        QMessageBox.information(self, "About", "Vispy Proof of Concept\nPlaceholder menus - implement functionality.")
+        QMessageBox.information(self, "About", f"Vispy Proof of Concept\nDeveloped by Alfie Littlestone\nVersion        {about.version}\nUpdated        {about.last_update}\nChannel     {about.channel}")
 
 app = QApplication(sys.argv)
 window = NodeEditor()

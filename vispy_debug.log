@@ -33,3 +33,22 @@ Current thread 0x00004d30 (most recent call first):
 2026-02-05 18:11:09,049 INFO:root: Save action triggered
 2026-02-05 18:11:34,741 INFO:root: Open file: C:/Users/Alfie/Documents/vispyfile1.vp
 2026-02-05 18:14:23,668 INFO:root: Open file: C:/Users/Alfie/Documents/vispyfile1.vp
+2026-02-06 21:40:26,667 INFO:root: Save action triggered
+2026-02-06 21:44:04,923 INFO:root: Save action triggered
+2026-02-06 21:44:29,843 INFO:root: Save action triggered
+2026-02-06 21:45:05,173 INFO:root: Open file: C:/Users/Alfie/Downloads/vispy/test2.vp
+2026-02-06 21:52:41,385 ERROR:root: Uncaught exception
+Traceback (most recent call last):
+  File "c:\Users\Alfie\Downloads\vispy\vispy\vis.py", line 168, in _show_about
+    QMessageBox.information(self, "About", f"Vispy Proof of Concept\nDeveloped by Alfie Littlestone\nVersion {about.version}\nUpdated {about.last_update}\nChannel {about.channel}")
+                                                                                                              ^^^^^^^^^^^^^
+AttributeError: module 'about' has no attribute 'version'
+2026-02-07 14:22:27,979 DEBUG:root: Type change requested for variable 'score' -> 'Any'
+2026-02-07 14:22:27,979 DEBUG:root: Attempting to recreate widget 'score' to type 'Any'
+2026-02-07 14:22:27,979 DEBUG:root: Recreating widget in new group
+2026-02-07 14:22:27,980 DEBUG:root: Recreate move successful
+2026-02-07 14:22:33,417 DEBUG:root: Type change requested for variable 'new_var_3' -> 'Exec'
+2026-02-07 14:22:33,417 DEBUG:root: Attempting to recreate widget 'new_var_3' to type 'Exec'
+2026-02-07 14:22:33,417 DEBUG:root: Recreating widget in new group
+2026-02-07 14:22:33,418 DEBUG:root: Recreate move successful
+2026-02-07 14:22:39,811 INFO:root: Open file: C:/Users/Alfie/Downloads/vispy/test2.vp
